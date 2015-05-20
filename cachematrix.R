@@ -38,4 +38,26 @@ cacheSolve <- function(x, ...) {
     x$setinverse(inv)
     inv
 }
+## Sample Run:
+##> x <- rbind(c(1, -1/2), c(-1/2,1))
+##> m <- makeCacheMatrix(x)
+##> m$get()
+##     [,1] [,2]
+##[1,]  1.0 -0.5
+##[2,] -0.5  1.0
+
+## No cache in the first run
+##> cacheSolve(m)
+##          [,1]      [,2]
+##[1,] 1.3333333 0.6666667
+##[2,] 0.6666667 1.3333333
+##> 
+## retriving the matrix in the second run
+##> cacheSolve(m)
+##getting cached data.
+##          [,1]      [,2]
+##[1,] 1.3333333 0.6666667
+##[2,] 0.6666667 1.3333333
+
+
 
